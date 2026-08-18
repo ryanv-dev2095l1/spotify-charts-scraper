@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spoticharts"
+version = "0.2.0"
+description = "Scrape regional Spotify chart dumps into SQLite and pull Last.fm tags for genre drift analysis"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Alex Thorne", email = "alex@thorne.dev"}
+]
+dependencies = [
+    "httpx>=0.25.0",
+    "pydantic>=2.4.0",
+    "click>=8.1.0",
+    "tenacity>=8.2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "respx>=0.20.0",
+    "ruff>=0.1.0",
+]
+
+[project.scripts]
+spoticharts = "spoticharts.cli:cli"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["spoticharts*"]
+
+[tool.ruff]
+line-length = 95
+target-version = "py310"
