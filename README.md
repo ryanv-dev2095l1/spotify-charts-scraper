@@ -32,4 +32,4 @@ spoticharts drift --territory br --days 30 --top-genres 5
 
 SQLite DB defaults to `charts.db` in the working directory, or pass `--db-path /path/to/db.sqlite` to any command.
 
-<!-- refreshed: 2026-09-09 -->
+<!-- refreshed: 2026-09-10 -->
